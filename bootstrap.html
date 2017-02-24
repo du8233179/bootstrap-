@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0">
+  <title>bootstrap项目</title>
+<link rel="stylesheet" href="css/bootstrap.css">
+<script src="js/jquery-2.1.1.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<style>
+      *{margin: 0;padding: 0;}
+      body,html{width:100%;height:100%;}
+      .header{width: 100%; height:auto; overflow:hidden;}
+      .navSty{background:#252525;}
+      .item a{color:#CECECE;}
+      .item a:hover{color:white; background:none;}
+      .navHead{margin-left:3%}
+      .navShow{margin-left:20%;}
+      .search{float:right; position:absolute; top:20%;right:15%; background:url(imgs/search162.png) no-repeat left center; color:#CECECE; text-indent:20%; border:1px solid #333333;}
+      .banner{width:100%; height:auto; position:relative;}
+      .banner .bannerBox{width:100%; margin:0; padding:0; top:0; margin-top:-20px;}
+      .mainRow1{padding-bottom:1em; padding-top: 2em; background:white;}
+      .tab .tite{height:60px;line-height:60px;font-size:22px;
+          text-align: center; font-weight:bold;
+          background: url(imgs/xian.png) no-repeat center bottom;}
+      .tab .list{height: 55px;  line-height: 55px;  text-align: center; position:relative;}
+      .tab .list a{color:black; text-decoration:none;}
+      .tab .list a:hover{color:#FD4F00;}
+      .thumbnail{border:none; border-bottom:1px solid #e5e9e8;}
+      .subRow1 .caption{background-color:#FFF; padding:1em; text-align:center; padding-top:0px;}
+      .subRow1 .caption a{color:black; font-weight:bold; text-decoration:none;}
+      .subRow1 .caption a:hover{color:#FD4F00;}
+      .mainRow2{padding-bottom:1em; padding-top: 2em; background:#F2F2F2;}
+      .subRow2 .thumbnail{border:none; margin-bottom:0;}
+      .subRow2 .caption{overflow:hidden; line-height:25px; padding:0; background:#fff;height:3em;}
+      .subRow2 .caption .tite{line-height:30px; margin:0px 15px;overflow:hidden;padding-bottom:15px;
+          font-size:1em;}
+      .mainRow3{padding-bottom:1em; padding-top: 2em; background:#fff;}
+      .mainRow4{padding-bottom:1em; padding-top: 2em; background:#f2f2f2;}
+
+      .fwitem a{text-decoration:none; color: #333;}
+      .fwitem a .item{border:1px solid #ddd;background:#fff;border-radius:4px;padding:30px 15px;
+          margin:15px 0;text-align:center; cursor:pointer;}
+      .fwitem a .item h4{font-weight:bold;font-size: 18px;line-height:35px;margin-top:5px;}
+      .fwitem a .item img{width:50%;margin:10px auto; -webkit-transition: all 0.6s ease-in-out;
+          transition:all 0.6s ease-in-out;}
+      .fwitem a .item img:hover{transform:rotate(-360deg)}
+      @media all and (max-width:768px) {
+          .fwitem{ margin:0; margin-right:2%;}
+      }
+      @media all and (min-width:768px) {
+          .fwitem{width:18%; margin:0; margin-right:2%; float:left;}
+      }
+      .footer{color:#fff;border-top:solid 2px #f60;background:#3f3b39}
+      .footer .top{overflow:hidden;padding-bottom:40px;padding-top:10px;}
+      .footer-top-dl{padding:24px 15px 0px 15px; text-align:left; overflow: hidden;}
+      .footer-top-dl dt{float: left; width: 100%; font-size:1.0em; font-weight:normal;
+          padding-bottom: 12px;}
+      .footer-top-dl dt a{font-size:16px; color:#EEEEEE; font-weight:bold;}
+      .footer-top-dl dd{width:100%; float:left; line-height:24px; font-size:0.8em;}
+      .footer-top-dl dd a{color:#e5e9e8;}
+      .footer .bottom{padding:20px 0px;
+          line-height:20px;
+          text-align:center;
+          color:#eee;
+          font-size:0.8em;
+          font-weight:bold;
+          border-top:1px solid #333;}
+      .footer .bottom a{color:#eee;}
+      .topBox{position:fixed;right:10px;bottom:25px;padding-bottom:73px;z-index:5;}
+      .btn-top:hover{background-position:-50px 0}
+      @media all and (max-width:992px) {
+          .btn-top{}
+      }
+      @media all and (min-width:992px) {
+          .btn-top{background:url("imgs/gotop.png") no-repeat; width:50px;
+              height:50px;
+              margin-bottom:1px;
+              cursor:pointer;
+              position:relative;
+              border-radius: 50%;
+              display:none;}
+      }
+</style>
+</head>
+<body>
+<div class="header">
+        <div class="navSty navbar navbar-inverse" role="navigation">
+            <div class="navbar-header navHead">
+              <button class="navbar-toggle" data-toggle="collapse"
+                data-target="#list">
+                            <span class="sr-only">切换导航</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+              </button>
+             <a href="#" class="navbar-brand"><img src="imgs/logoy.png" width="60%"></a>
+      </div>
+        <div class="navShow collapse navbar-collapse" id="list">
+          <ul class="nav nav-pills navbar-nav">
+                <li class="item"><a href="#">家用产品</a></li>
+                <li class="item"><a href="#">商用网络</a></li>
+                <li class="item"><a href="#">产品导购</a></li>
+                <li class="item"><a href="#">服务支持</a></li>
+                <li class="item"><a href="#">官方商城</a></li>
+                <li class="item"><a href="#">走进腾达</a></li>
+          </ul>
+        </div>
+        <input type="text" class="btn-sm search" placeholder="产品搜索">
+      </div>
+</div>
+<div class="banner">
+    <div class="container bannerBox">
+        <div id="myCarousel" class="carousel slide">
+            <!-- 轮播（Carousel）指标 -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="3"></li>
+                <li data-target="#myCarousel" data-slide-to="4"></li>
+                <li data-target="#myCarousel" data-slide-to="5"></li>
+            </ol>
+            <!-- 轮播（Carousel）项目 -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="imgs/20161111746399302.jpg" alt="First slide">
+                </div>
+                <div class="item">
+                    <img src="imgs/20161131538474954.jpg" alt="Second slide">
+                </div>
+                <div class="item">
+                    <img src="imgs/201612151715287366.jpg" alt="Third slide">
+                </div>
+                <div class="item">
+                    <img src="imgs/20161281446178064.jpg"  alt="Third slide">
+                </div>
+                <div class="item">
+                    <img src="imgs/20168201737559559.jpg" alt="Third slide">
+                </div>
+                <div class="item">
+                    <img src="imgs/2016826935506111.jpg" alt="Third slide">
+                </div>
+            </div>
+            <!-- 轮播（Carousel）导航 -->
+            <a class="carousel-control left" href="#myCarousel" role="button" title="上一个" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">prev</span>
+            </a>
+            <a class="carousel-control right" href="#myCarousel" role="button" title="下一个" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">next</span>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="mainRow1">
+    <div class="container">
+        <div class="tab">
+            <h3 class="tite">家用新品</h3>
+            <div class="list hidden-xs">
+                <a href="##">路由器</a><span>｜</span>
+                <a href="##">信号放大器</a><span>｜</span>
+                <a href="##">无线网卡</a><span>｜</span>
+                <a href="##">接入终端</a><span>｜</span>
+                <a href="##">3G/4G</a><span>｜</span>
+                <a href="##">交换机</a><span>｜</span>
+                <a href="##">电力线</a><span>｜</span>
+                <a href="">网络摄像机</a><span style="display: none;">｜</span>
+            </div>
+        </div>
+        <div class="item">
+            <div class="row subRow1">
+                <div class="col-xs-6 col-sm-3">
+                    <div class="thumbnail">
+                        <a href=""><img src="imgs/j1.jpg" style="display:block;"></a>
+                    </div>
+                    <div class="caption">
+                        <span><a href="">AC18&nbsp;&nbsp;详情&nbsp;&nbsp;</a></span>
+                        <a class="hidden-xs hidden-sm" href="">参数</a>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-3">
+                    <div class="thumbnail">
+                        <a href=""><img src="imgs/j2.jpg" style="display:block;"></a>
+                    </div>
+                    <div class="caption">
+                        <span><a href="">AC15&nbsp;&nbsp;详情&nbsp;&nbsp;</a></span>
+                        <a class="hidden-xs hidden-sm" href="">参数</a>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-3">
+                    <div class="thumbnail">
+                        <a href=""><img src="imgs/j4.jpg" style="display:block;"></a>
+                    </div>
+                    <div class="caption">
+                        <span><a href="">AC6&nbsp;&nbsp;详情&nbsp;&nbsp;</a></span>
+                        <a class="hidden-xs hidden-sm" href="">参数</a>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-3">
+                    <div class="thumbnail">
+                        <a href=""><img src="imgs/j5.jpg" style="display:block;"></a>
+                    </div>
+                    <div class="caption">
+                        <span><a href="">AC9&nbsp;&nbsp;详情&nbsp;&nbsp;</a></span>
+                        <a class="hidden-xs hidden-sm" href="">参数</a>
+                    </div>
+                </div>
+            </div>
+      </div>
+    </div>
+</div>
+<div class="mainRow2">
+    <div class="container">
+        <div class="tab">
+            <h3 class="tite">商用网络</h3>
+            <div class="list hidden-xs">
+                <a href="##">企业无线路由器</a><span>｜</span>
+                <a href="##">无线AP</a><span>｜</span>
+                <a href="##">交换机</a><span>｜</span>
+                <a href="##">AP控制器</a><span>｜</span>
+                <a href="##">企业路由器</a><span>｜</span>
+                <a href="##">其他产品</a><span>｜</span>
+                <a href="##">购买商用产品</a><span>｜</span>
+            </div>
+        </div>
+        <div class="item">
+            <div class="row subRow2">
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                        <a href=""><img src="imgs/ban1.jpg" style="display:block;"></a>
+                    </div>
+                    <div class="caption">
+                        <div class="tite">
+                            <strong>无线通解决方案</strong><br/>
+                            推出基于场景化的无线解决方案，大幅度降低客户部署和维护成本
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                        <a href=""><img src="imgs/ban2.jpg" style="display:block;"></a>
+                    </div>
+                    <div class="caption">
+                        <div class="tite">
+                            <strong>无线通解决方案</strong><br/>
+                            推出基于场景化的无线解决方案，大幅度降低客户部署和维护成本
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                        <a href=""><img src="imgs/ban3.jpg" style="display:block;"></a>
+                    </div>
+                    <div class="caption">
+                        <div class="tite">
+                            <strong>无线通解决方案</strong><br/>
+                            推出基于场景化的无线解决方案，大幅度降低客户部署和维护成本
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mainRow3">
+    <div class="container">
+        <div class="tab">
+            <h3 class="tite">走进腾达</h3>
+            <div class="list hidden-xs">
+                <a href="##">最新新闻</a><span>｜</span>
+                <a href="##">最热新闻</a><span>｜</span>
+                <a href="##">智能路由器</a><span>｜</span>
+                <a href="##">Wi-Fi小常识</a><span>｜</span>
+                <a href="##">专家解答</a><span>｜</span>
+                <a href="##">路由器评测</a><span>｜</span>
+                <a href="##">行业动态</a><span>｜</span>
+            </div>
+        </div>
+        <div class="item">
+            <div class="row subRow2">
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                        <a href=""><img src="imgs/ban4.jpg" style="display:block;"></a>
+                    </div>
+                    <div class="caption">
+                        <div class="tite">
+                            AC9凭借好的口碑和硬的实力，赢得了上海电信的青睐，在众多同行业厂家的
+                            激烈竞争下，成功夺
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                        <a href=""><img src="imgs/ban5.jpg" style="display:block;"></a>
+                    </div>
+                    <div class="caption">
+                        <div class="tite">
+                            光纤网络的普及,宽带从以前的2M到如今的100M,再加上日新月异的网络应用需求，使得
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                        <a href=""><img src="imgs/ban6.jpg" style="display:block;"></a>
+                    </div>
+                    <div class="caption">
+                        <div class="tite">
+                            双屏路由器是无线路由器中的佼佼者,它具备更强的干扰性，无线信号更强,稳定性更高
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mainRow4">
+    <div class="container">
+        <div class="row">
+                <div class="fwitem">
+                    <a href="#">
+                        <div class="item">
+                            <h4>常见问题</h4><img src="imgs/hp1.png">
+                            <div class="desc">
+                                产品指南和问题解决方案，帮助客户熟悉产品和自助解决问题
+                            </div>
+                            <span class="more">查看详情 &gt;&gt;</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="fwitem">
+                    <a href="#">
+                        <div class="item">
+                            <h4>常见问题</h4><img src="imgs/hp2.png">
+                            <div class="desc">
+                                产品指南和问题解决方案，帮助客户熟悉产品和自助解决问题
+                            </div>
+                            <span class="more">查看详情 &gt;&gt;</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="fwitem">
+                    <a href="#">
+                        <div class="item">
+                            <h4>常见问题</h4><img src="imgs/hp3.png">
+                            <div class="desc">
+                                产品指南和问题解决方案，帮助客户熟悉产品和自助解决问题
+                            </div>
+                            <span class="more">查看详情 &gt;&gt;</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="fwitem">
+                    <a href="#">
+                        <div class="item">
+                            <h4>常见问题</h4><img src="imgs/hp4.png">
+                            <div class="desc">
+                                产品指南和问题解决方案，帮助客户熟悉产品和自助解决问题
+                            </div>
+                            <span class="more">查看详情 &gt;&gt;</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="fwitem">
+                    <a href="#">
+                        <div class="item">
+                            <h4>常见问题</h4><img src="imgs/hp5.png">
+                            <div class="desc">
+                                产品指南和问题解决方案，帮助客户熟悉产品和自助解决问题
+                            </div>
+                            <span class="more">查看详情 &gt;&gt;</span>
+                        </div>
+                    </a>
+                </div>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <div class="top hidden-xs hidden-sm">
+        <div class="container">
+            <div class="row">
+                <dl class="col-sm-2 footer-top-dl">
+                    <dt><a href="#">服务支持</a></dt>
+                    <dd><a href="#">下载中心</a></dd>
+                    <dd><a href="#">帮助文档</a></dd>
+                    <dd><a href="#">视频中心</a></dd>
+                </dl>
+                <dl class="col-sm-2 footer-top-dl">
+                    <dt><a href="#">售后服务</a></dt>
+                    <dd><a href="#">保修政策</a></dd>
+                    <dd></dd>
+                    <dd><a href="#">售后网点</a></dd>
+                    <dd></dd>
+                    <dd><a href="#">产品退市声明</a></dd>
+                    <dd></dd>
+                </dl>
+                <dl class="col-sm-2 footer-top-dl">
+                    <dt><a href="#">关于腾达</a></dt>
+                    <dd><a href="#">公司介绍</a></dd>
+                    <dd></dd>
+                    <dd><a href="">联系方式</a></dd>
+                    <dd></dd>
+                    <dd><a href="">企业动态</a></dd>
+                    <dd></dd>
+                </dl>
+                <dl class="col-sm-2 footer-top-dl">
+                    <dt><a href="#">工作机会</a></dt>
+                    <dd><a href="#">社会招聘</a></dd>
+                    <dd><a href="#">校园招聘</a></dd>
+                </dl>
+                <dl class="col-sm-2 footer-top-dl">
+                    <dt><a href="#">官方商城</a></dt>
+                    <dd><a href="#">天猫旗舰店</a></dd>
+                    <dd><a href="#">京东旗舰店</a></dd>
+                    <dd><a href="#">苏宁旗舰店</a></dd>
+                </dl>
+                <dl class="col-sm-2 footer-top-dl">
+                    <dt><a href="#">关注腾达</a></dt>
+                    <dd><a href="#">腾达官方微博</a></dd>
+                    <dd><a href="#">腾达官方微信</a></dd>
+                    <dd><a href="#">腾达官方Q群</a></dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+    <div class="bottom ">
+        <div class="container footer-cont-bottom">
+          <a href="#">使用条款</a>&nbsp;&nbsp;
+          <a href="#">隐私保护</a> &nbsp;&nbsp;
+          <br class="visible-xs">&nbsp;&nbsp;深圳市吉祥腾达科技有限公司 ©
+          <span id="toyear" style="color:#fff;">2016</span> 版权所有 粤ICP备05011718号
+        </div>
+    </div>
+</div>
+<div class="topBox" id="topBox">
+    <a href="#"><div class="btn-top"></div></a>
+</div>
+</body>
+<script>
+    $(function(){
+        $('.carousel').carousel();
+        $(window).scroll(function () {
+            if($(window).scrollTop() > 400){
+                $(".btn-top").css("display","block")
+            }else{
+                $(".btn-top").css("display","none")
+            }
+        });
+        $(".btn-top").click(function(){
+                    $("html,body").animate({scrollTop:0},1000);
+        })
+    })
+</script>
+</html>
